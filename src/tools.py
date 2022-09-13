@@ -4,11 +4,7 @@ import numpy as np
 class Tools:
     @staticmethod
     def array_in_liste(vect, liste):
-        for item in liste:
-            if np.all(item == vect):
-                return True
-            else:
-                return False
+        return True if True in [np.array_equal(vect, item) for item in liste] else False
 
     @staticmethod
     def augmentation_matrix(matrix, n=3):

@@ -1,6 +1,7 @@
 import numpy as np
 from src.plot import PlotBoard
 from src.animation import Animation
+from src.iteration import Iteration
 
 
 class Board:
@@ -24,5 +25,8 @@ class Board:
         
     def animate(self, **kwargs):
         Animation.animation(self.board, **kwargs)
+    
+    def states(self, **kwargs):
+        return Iteration.iteration(self.board, **kwargs)
     
     

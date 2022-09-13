@@ -33,12 +33,14 @@ class State:
 
 class Iteration:
     @staticmethod
-    def iteration(init_board, n_max = 10, n_augmentation=3):
+    def iteration(init_board, n_max = 10, n_augmentation=10):
         board = Tools.augmentation_matrix(init_board, n_augmentation)
         res = [(init_board, 0)]
         for n in range(1, n_max):
             board = State(board).board
-            res.append((Tools.reduction_matrix(board, 3), n))
-            if np.sum(Tools.reduction_matrix(board, 3)) == 0 :##or array_in_liste(board, res):
+            res.append((Tools.reduction_matrix(board, n_augmentation), n))
+            if np.sum(Tools.reduction_matrix(board, n_augmentation)) == 0 :
+                break
+            if Tools.array_in_liste(board, (item[0] for item in res)):
                 break
         return res

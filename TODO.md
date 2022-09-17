@@ -8,4 +8,4 @@
 [X] Tout compiler dans un fichier src/classes.py pour simplifier le code  
 [ ] Condition d'arret pour un état déja connu  
     * array déja présent dans une liste  --> weird ne fonctionne pas
-[ ] Matrice non carrée  
+[ ] Matrice non carrée  --> Branch develop

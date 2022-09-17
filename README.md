@@ -9,19 +9,12 @@ Lancement :
 ```
 
 Ouvrir main.ipynb   
-Initialiser un instant initial
 
 ```
-t0 = Board(20, [[2, 6], [2, 5], [2, 4], [1, 4], [0, 5]])
-```
+from src.board import Board
+from src.entity import Entity
 
-
-Pour afficher le tableau initial :
-```
-t0.plot(**kwargs)
-```
-
-Pour enregistrer l'animation en .gif
-```
-t0.animate()
+t0 = Board((30, 60), Entity.canon(), offset = (2, 10))
+t0.plot()
+t0.animate(n_max=100)
 ```

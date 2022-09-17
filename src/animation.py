@@ -9,7 +9,7 @@ class Animation:
     def animation(board, name=None, n_max=30, **kwargs):
         name = f"life_game" if name is None else name
 
-        etats = Iteration.iteration(board, n_max=30)
+        etats = Iteration.iteration(board, n_max)
         def init_board():
             ax.plot(x, -y, c='k', lw=0.5,)
             ax.plot(y, -x, c='k', lw=0.5)

@@ -26,7 +26,7 @@ class State:
     def inc_board(init_board):
         inc_board = np.zeros(init_board.shape, dtype=int)
         for i in range(1, init_board.shape[0]-1):
-            for j in range(1, init_board.shape[0]-1):
+            for j in range(1, init_board.shape[1]-1):
                 sub_matrix = init_board[i-1 : i+2, j-1 : j+2]
                 inc_board[i, j] = Rules.rules(sub_matrix)
         return inc_board

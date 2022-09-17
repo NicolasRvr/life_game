@@ -6,6 +6,5 @@
     ...  
 [X] Comprendre pourquoi l'animation ne marche pas avec matplolib.animation  
 [X] Tout compiler dans un fichier src/classes.py pour simplifier le code  
-[ ] Condition d'arret pour un état déja connu  
-    * array déja présent dans une liste  --> weird ne fonctionne pas
+[ ] Condition d'arret pour un état déja connu  --> matrice déja présente dans la liste des états calculés
 [ ] Matrice non carrée  

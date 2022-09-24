@@ -11,22 +11,27 @@ class Animation:
 
         etats = Iteration.iteration(board, n_max)
         def init_board():
-            ax.plot(x, -y, c='k', lw=0.5,)
             ax.plot(y, -x, c='k', lw=0.5)
+            ax.plot(z, -k, c='k', lw=0.5)
             ax.axis('off')
+            plt.axis('equal')
 
         def plot_board(state):
-            size = state[0].shape[0]
-            for i in range(size):
-                for j in range(size):
+            size = state[0].shape
+            li, co = *size,
+            for i in range(li):
+                for j in range(co):
                     if state[0][i, j] == 1:
                         ax.add_patch(plt.Rectangle(((j-0.5), -(i-0.5)), 1, -1, facecolor='pink', edgecolor='black'))
             plt.title(f"State {state[1]}", loc='center')
+            plt.axis('equal')
             plt.tight_layout()
 
-        size = board.shape[0]
-        x, y = np.meshgrid(np.arange(-0.5, size, 0.5)[::2], np.arange(-0.5, size))
-        fig, ax = plt.subplots(figsize=(10, 10), dpi=50)
+        size = board.shape
+        li, co = *size,
+        x, y = np.meshgrid(np.arange(-0.5, li, 0.5)[::2], np.arange(-0.5, co, 0.5)[::2])
+        z, k = np.meshgrid(np.arange(-0.5, co, 0.5)[::2], np.arange(-0.5, li, 0.5)[::2])
+        fig, ax = plt.subplots(dpi=100)
         init_board()
 
         def update(state):
